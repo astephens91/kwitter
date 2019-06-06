@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() =><React.Fragment> <Navbar/>><LoginForm /></React.Fragment>} />
+        <Route exact path="/" render={() =><React.Fragment> <Navbar/><LoginForm /></React.Fragment>} />
         <Route exact path="/profile" render={() => <UserProfile />} />
         <Route exact path="/register" render={() => <RegisterForm />} />
 
