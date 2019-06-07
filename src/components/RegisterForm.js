@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {registerThenGoToUserProfile as register} from "../actions";
+import { registerThenGoToUserProfile as register } from "../actions";
+import { Form, Grid } from "semantic-ui-react";
 import Spinner from "react-spinkit";
 
 class RegisterForm extends Component {
@@ -19,36 +20,63 @@ class RegisterForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
-        <h1>register</h1>
-        <form onSubmit={this.handleRegister}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="displayName">nickname</label>
-          <input
-            type="text"
-            name="displayName"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={isLoading}>
-            Register
-          </button>
-        </form>
-        {isLoading && <Spinner name="circle" color="blue" />}
-        {err && <p style={{ color: "red" }}>{err}</p>}
+        <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
+          <Grid.Column style={{ maxWidth: 350 }}>
+            <Form className="registerForm" size="large">
+              <Form.Field>
+                <h1 className="register">Register</h1>
+                <form onSubmit={this.handleRegister}>
+                  <label htmlFor="email"></label>
+                  <Form.Input
+                    type="text"
+                    name="email"
+                    icon="mail"
+                    iconPosition="left"
+                    placeholder="E-Mail"
+                    autoFocus
+                    required
+                    onChange={this.handleChange}
+                  />
+                  <label htmlFor="password"></label>
+                  <Form.Input
+                    type="password"
+                    name="password"
+                    icon="lock"
+                    iconPosition="left"
+                    placeholder="Password"
+                    required
+                    onChange={this.handleChange}
+                  />
+                  <label htmlFor="password"></label>
+                  <Form.Input
+                    type="password"
+                    name="confirmPassword"
+                    icon="lock"
+                    iconPosition="left"
+                    placeholder="Confirm Password"
+                    required
+                    onChange={this.handleChange}
+                  />
+                  <label htmlFor="username"></label>
+                  <Form.Input
+                    type="text"
+                    name="displayName"
+                    icon="user"
+                    iconPosition="left"
+                    placeholder="Username"
+                    required
+                    onChange={this.handleChange}
+                  />
+                  <button className="ui black button" type="submit" disabled={isLoading}>
+                    Submit
+                  </button>
+                </form>
+                {isLoading && <Spinner name="circle" color="blue" />}
+                {err && <p style={{ color: "red" }}>{err}</p>}
+              </Form.Field>
+            </Form>
+          </Grid.Column>
+        </Grid>
       </React.Fragment>
     );
   }
@@ -59,5 +87,5 @@ export default connect(
     isLoading: auth.registerLoading,
     err: auth.registerError
   }),
-  {register}
+  { register }
 )(RegisterForm);

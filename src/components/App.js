@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import { LoginForm, UserProfile, RegisterForm, Navbar } from ".";
+import { LoginForm, UserProfile, RegisterForm } from ".";
 import 'semantic-ui-css/semantic.min.css'
 import HomePage from "./HomePage";
 
