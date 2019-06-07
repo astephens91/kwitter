@@ -29,8 +29,8 @@ class RegisterForm extends Component {
                   <label htmlFor="email"></label>
                   <Form.Input
                     type="text"
-                    name="username"
-                    icon="user"
+                    name="email"
+                    icon="mail"
                     iconPosition="left"
                     placeholder="E-Mail"
                     autoFocus
@@ -68,8 +68,8 @@ class RegisterForm extends Component {
                     onChange={this.handleChange}
                   />
                   <button className="ui black button" type="submit" disabled={isLoading}>
-                    Register
-          </button>
+                    Submit
+                  </button>
                 </form>
                 {isLoading && <Spinner name="circle" color="blue" />}
                 {err && <p style={{ color: "red" }}>{err}</p>}
