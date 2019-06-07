@@ -7,9 +7,7 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 
 
-export const REGISTER = "REGISTER";
-export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
-export const REGISTER_FAIL = "REGISTER_FAIL";
+
 
 const url = domain + "/auth";
 
@@ -40,35 +38,10 @@ const login = loginData => dispatch => {
 
 
 
- const register = registerData => dispatch => {
-  dispatch({
-    type: REGISTER
-  });
-
-  return fetch(url + "/register", {
-    method: "POST",
-    headers: jsonHeaders,
-    body: JSON.stringify(registerData)
-  })
-    .then(handleJsonResponse)
-    .then(result => {
-      return dispatch({
-        type: REGISTER_SUCCESS,
-        payload: result
-      });
-    })
-    .catch(err => {
-      return Promise.reject(
-        dispatch({ type: REGISTER_FAIL, payload: err.message })
-      );
-    });
-};
 
 
 export const loginThenGoToUserProfile = loginData => dispatch => {
-  return dispatch(login(loginData)).then(() => dispatch(push("/profile")));
+  return dispatch(login(loginData)).then(() => dispatch(push("/home")));
 };
 
-export const registerThenGoToUserProfile = registerData => dispatch => {
-  return dispatch(register(registerData)).then(()=>dispatch(push("/profile")));
-}; 
+
