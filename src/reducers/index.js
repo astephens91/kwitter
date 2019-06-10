@@ -4,7 +4,7 @@ import auth from "./auth";
 import likes from "./likes";
 import messages from "./messages";
 import users from "./users";
-import register from "./register"
+import register from "./register";
 
 export default history =>
   combineReducers({

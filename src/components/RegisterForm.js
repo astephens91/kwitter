@@ -20,13 +20,17 @@ class RegisterForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
-        <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
+        <Grid
+          textAlign="center"
+          style={{ height: "100vh" }}
+          verticalAlign="middle"
+        >
           <Grid.Column style={{ maxWidth: 350 }}>
             <Form className="registerForm" size="large">
               <Form.Field>
                 <h1 className="register">Register</h1>
                 <form onSubmit={this.handleRegister}>
-                  <label htmlFor="email"></label>
+                  <label htmlFor="email" />
                   <Form.Input
                     type="text"
                     name="email"
@@ -37,7 +41,7 @@ class RegisterForm extends Component {
                     required
                     onChange={this.handleChange}
                   />
-                  <label htmlFor="password"></label>
+                  <label htmlFor="password" />
                   <Form.Input
                     type="password"
                     name="password"
@@ -47,7 +51,7 @@ class RegisterForm extends Component {
                     required
                     onChange={this.handleChange}
                   />
-                  <label htmlFor="password"></label>
+                  <label htmlFor="password" />
                   <Form.Input
                     type="password"
                     name="confirmPassword"
@@ -57,7 +61,7 @@ class RegisterForm extends Component {
                     required
                     onChange={this.handleChange}
                   />
-                  <label htmlFor="username"></label>
+                  <label htmlFor="username" />
                   <Form.Input
                     type="text"
                     name="displayName"
@@ -67,7 +71,11 @@ class RegisterForm extends Component {
                     required
                     onChange={this.handleChange}
                   />
-                  <button className="ui black button" type="submit" disabled={isLoading}>
+                  <button
+                    className="ui black button"
+                    type="submit"
+                    disabled={isLoading}
+                  >
                     Submit
                   </button>
                 </form>
