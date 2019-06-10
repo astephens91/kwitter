@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Input, Menu } from "semantic-ui-react";
+import { Menu, Button, Image } from "semantic-ui-react";
+import {Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default class MenuExampleSecondary extends Component {
+export default class Navbar extends Component {
   state = { activeItem: "home" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -10,33 +12,37 @@ export default class MenuExampleSecondary extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu secondary>
-        <Menu.Item
-          name="home"
-          active={activeItem === "home"}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item
-          name="messages"
-          active={activeItem === "messages"}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item
-          name="friends"
-          active={activeItem === "friends"}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Menu position="right">
-          <Menu.Item>
-            <Input icon="search" placeholder="Search..." />
-          </Menu.Item>
-          <Menu.Item
-            name="logout"
-            active={activeItem === "logout"}
-            onClick={this.handleItemClick}
-          />
-        </Menu.Menu>
-      </Menu>
-    );
-  }
-}
+      <React.Fragment>
+          <Menu id="bar">
+            <React.Fragment>
+              <Link to="/home">
+                <Menu.Item>
+                  Kwitter{/* Logo Thumbnail goes here */}
+                </Menu.Item>
+              </Link>
+              <Link to="/profile">
+                 <Menu.Item>
+                   
+                     Profile
+                   
+                 </Menu.Item>
+                </Link>
+              <Menu.Menu position="right">
+
+                <Menu.Item>
+                  <Button style={{ backgroundColor: "#ff0000", color: "white"}}
+                  /*Logout handler will go here */
+                  >
+                    Logout
+                  </Button>
+                </Menu.Item>
+              </Menu.Menu>
+            </React.Fragment>
+          </Menu>
+          </React.Fragment>
+        ) 
+
+  
+    }};
+
+
