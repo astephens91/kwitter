@@ -20,9 +20,18 @@ class LoginForm extends Component {
     const { isLoading, err } = this.props;
     return (
       <React.Fragment>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <Segment placeholder>
-          <Grid columns={2} stackable textAlign="centered">
             <Divider vertical>Or</Divider>
+          <Grid columns={2} stackable textAlign="centered">
             <Grid.Column style={{ maxWidth: 350 }}>
               <Form
                 className="loginForm"
