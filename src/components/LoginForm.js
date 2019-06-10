@@ -64,7 +64,7 @@ class LoginForm extends Component {
               </Form>
             </Grid.Column>
             <Grid.Column verticalAlign="middle" style={{ maxWidth: 350 }}>
-              <a class="ui black button" href="/register">
+              <a className="ui black button" href="/register">
                 Register
               </a>
             </Grid.Column>
