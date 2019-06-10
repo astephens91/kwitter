@@ -21,7 +21,8 @@ class LoginForm extends Component {
     return (
       <React.Fragment>
         <Segment placeholder>
-          <Grid columns={2} relaxed="very">
+          <Grid columns={2} stackable textAlign="centered">
+            <Divider vertical>Or</Divider>
             <Grid.Column style={{ maxWidth: 350 }}>
               <Form
                 className="loginForm"
@@ -69,7 +70,6 @@ class LoginForm extends Component {
               </a>
             </Grid.Column>
           </Grid>
-          <Divider vertical>Or</Divider>
         </Segment>
       </React.Fragment>
     );
