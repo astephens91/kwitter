@@ -1,10 +1,41 @@
 import React, { Component } from "react";
 import { Input, Menu } from "semantic-ui-react";
-
-export default class MenuExampleSecondary extends Component {
+import { connect } from "react-redux";
+// import{ Link } from "react-router-dom";
+import { push } from "connected-react-router"
+// import { logout } from "../actions/logout";
+class MenuExampleSecondary extends Component {
   state = { activeItem: "home" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
+  handleLogout = event => {
+    // logout();
+    // this.setState({ active: false });
+    const kwitterURL = "https://kwitter-api.herokuapp.com";
+    // console.log("big boobs");
+    let token = this.props.auth.login.token;
+    console.log(token)
+
+    fetch(`${kwitterURL}/auth/logout`, {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+      .then(response => {
+        
+        return response.json();
+      })
+      .then(data => {
+        console.log(data)
+        
+      })
+      .catch(err => {
+        console.log(err)
+        
+      });
+      this.props.dispatch(push("/"))
+  };
 
   render() {
     const { activeItem } = this.state;
@@ -31,12 +62,22 @@ export default class MenuExampleSecondary extends Component {
             <Input icon="search" placeholder="Search..." />
           </Menu.Item>
           <Menu.Item
-            name="logout"
+            name= "logout"
             active={activeItem === "logout"}
-            onClick={this.handleItemClick}
+            onClick={this.handleLogout}
+            // component= {Link} 
+            // to= "/"
           />
         </Menu.Menu>
       </Menu>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps)(MenuExampleSecondary)
