@@ -30,7 +30,7 @@ class RegisterForm extends Component {
                   <Form.Input
                     type="text"
                     name="email"
-                    icon="mail"
+                    icon="at"
                     iconPosition="left"
                     placeholder="E-Mail"
                     autoFocus
