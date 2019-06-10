@@ -6,9 +6,6 @@ export const LOGIN = "LOGIN";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 
-
-
-
 const url = domain + "/auth";
 
 // action creators
@@ -36,12 +33,6 @@ const login = loginData => dispatch => {
     });
 };
 
-
-
-
-
 export const loginThenGoToUserProfile = loginData => dispatch => {
   return dispatch(login(loginData)).then(() => dispatch(push("/home")));
 };
-
-

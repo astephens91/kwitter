@@ -22,9 +22,7 @@ class LoginForm extends Component {
       <React.Fragment>
         <Segment placeholder>
           <Grid columns={2} relaxed="very">
-            <Grid.Column
-              style={{ maxWidth: 350 }}
-            >
+            <Grid.Column style={{ maxWidth: 350 }}>
               <Form
                 className="loginForm"
                 size="large"
@@ -55,7 +53,7 @@ class LoginForm extends Component {
                   onChange={this.handleChange}
                 />
                 <button
-                  class="ui red button"
+                  className="ui red button"
                   type="submit"
                   disabled={isLoading}
                 >
