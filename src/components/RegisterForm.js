@@ -34,10 +34,20 @@ class RegisterForm extends Component {
                   <Form.Input
                     type="text"
                     name="displayName"
-                    icon="mail"
+                    icon="id badge"
                     iconPosition="left"
                     placeholder="Display Name"
                     autoFocus
+                    required
+                    onChange={this.handleChange}
+                  />
+                  <label htmlFor="username" />
+                  <Form.Input
+                    type="text"
+                    name="username"
+                    icon="user circle"
+                    iconPosition="left"
+                    placeholder="Username"
                     required
                     onChange={this.handleChange}
                   />
@@ -48,26 +58,6 @@ class RegisterForm extends Component {
                     icon="lock"
                     iconPosition="left"
                     placeholder="Password"
-                    required
-                    onChange={this.handleChange}
-                  />
-                  {/* <label htmlFor="password" />
-                  <Form.Input
-                    type="password"
-                    name="confirmPassword"
-                    icon="lock"
-                    iconPosition="left"
-                    placeholder="Confirm Password"
-                    required
-                    onChange={this.handleChange}
-                  /> */}
-                  <label htmlFor="username" />
-                  <Form.Input
-                    type="text"
-                    name="username"
-                    icon="user"
-                    iconPosition="left"
-                    placeholder="Username"
                     required
                     onChange={this.handleChange}
                   />

@@ -29,6 +29,9 @@ class LoginForm extends Component {
         <br/>
         <br/>
         <br/>
+        <br/>
+        <br/>
+        <br/>
         <Segment placeholder>
             <Divider vertical>Or</Divider>
           <Grid columns={2} stackable textAlign="centered">
@@ -44,9 +47,9 @@ class LoginForm extends Component {
                   className="username"
                   type="text"
                   name="username"
-                  icon="user"
+                  icon="user circle"
                   iconPosition="left"
-                  placeholder="Username/E-Mail"
+                  placeholder="Username"
                   autoFocus
                   required
                   onChange={this.handleChange}
