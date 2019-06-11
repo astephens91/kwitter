@@ -30,13 +30,13 @@ class RegisterForm extends Component {
               <Form.Field>
                 <h1 className="register">Register</h1>
                 <form onSubmit={this.handleRegister}>
-                  <label htmlFor="displayName" />
+                  <label htmlFor="email" />
                   <Form.Input
                     type="text"
-                    name="displayName"
+                    name="email"
                     icon="mail"
                     iconPosition="left"
-                    placeholder="Display Name"
+                    placeholder="E-Mail"
                     autoFocus
                     required
                     onChange={this.handleChange}
@@ -51,7 +51,7 @@ class RegisterForm extends Component {
                     required
                     onChange={this.handleChange}
                   />
-                  {/* <label htmlFor="password" />
+                  <label htmlFor="password" />
                   <Form.Input
                     type="password"
                     name="confirmPassword"
@@ -60,11 +60,11 @@ class RegisterForm extends Component {
                     placeholder="Confirm Password"
                     required
                     onChange={this.handleChange}
-                  /> */}
+                  />
                   <label htmlFor="username" />
                   <Form.Input
                     type="text"
-                    name="username"
+                    name="displayName"
                     icon="user"
                     iconPosition="left"
                     placeholder="Username"
