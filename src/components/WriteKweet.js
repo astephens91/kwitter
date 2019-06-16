@@ -41,7 +41,6 @@ class WriteKweet extends Component {
 }
 
 export default connect(
-      null
-    ,
+      null,
     { handleCreateKweet }
   )(WriteKweet);
